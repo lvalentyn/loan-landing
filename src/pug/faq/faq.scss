@@ -1,0 +1,128 @@
+@import '../../scss/vars';
+
+.faq {
+	&__row {
+		&:not(&:first-child) {
+			margin-top: 10px;
+		}
+	}
+
+	&__btn {
+		display: flex;
+		align-items: center;
+		padding: 10px;
+		background-color: $light-blue-color;
+		border-radius: 10px;
+
+		cursor: pointer;
+
+		&.active {
+			.faq__icon {
+				border: 2px solid $secondary-color;
+
+				&::before {
+					animation: faq .3s .1s linear both;
+				}
+			}
+
+			.faq__title {
+				color: $secondary-color;
+			}
+		}
+	}
+
+	&__icon {
+		position: relative;
+		align-self: flex-start;
+		flex: 0 0 auto;
+		width: 30px;
+		height: 30px;
+		margin-right: 10px;
+		background: $bg-color;
+		border-radius: 50%;
+		border: 0px solid $secondary-color;
+		transition: border .3s .2s ease;
+
+		&::after,
+		&::before {
+			content: '';
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: 60%;
+			height: 2px;
+			transform: translate(-50%, -50%) rotate(0deg);
+			background: $secondary-color;
+		}
+
+		&::before {
+			transform: translate(-50%, -50%) rotate(90deg);
+			animation: faq_out .3s .1s linear both;
+		}
+	}
+
+	&__title {
+		font-size: 16px;
+		font-weight: 600;
+		transition: .3s ease;
+	}
+
+	&__content {
+		max-height: 0;
+		opacity: 0;
+		transition: .3s ease;
+		overflow: hidden;
+
+		&.active {
+			overflow: visible;
+			opacity: 1;
+		}
+	}
+
+	&__text {
+		margin-top: -10px;
+		box-shadow: 0px 10px 10px #EAECEF;
+		border-radius: 0px 0px 10px 10px;
+		padding: 30px 10px 20px;
+		line-height: 22px;
+	}
+
+	@include respond-from(sm) {
+		&__btn {
+			padding: 15px 20px;
+		}
+
+		&__icon {
+			width: 40px;
+			height: 40px;
+			margin-right: 20px;
+		}
+
+		&__title {
+			font-size: 18px;
+		}
+
+		&__text {
+			padding: 40px 40px 30px;
+			font-size: 16px;
+			line-height: 26px;
+		}
+	}
+
+	@include respond-from(lg) {
+		&__row {
+			&:not(&:first-child) {
+				margin-top: 15px;
+			}
+		}
+
+		&__icon {
+			margin-right: 30px;
+		}
+
+		&__text {
+			margin-top: -20px;
+			padding: 55px 90px 35px;
+		}
+	}
+}

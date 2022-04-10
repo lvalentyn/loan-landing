@@ -1,0 +1,31 @@
+doctype html
+html 
+	head(lang="en")
+		meta(charset="utf-8")
+		meta(name="viewport" content="width=device-width, initial-scale=1.0")
+		link(rel='icon' href='files/favicon.ico')
+		title Loan Landing
+		link(rel="stylesheet" href="css/style.min.css")
+	body
+		.page
+			include pug/navbar/navbar
+			include pug/banner/banner
+			include pug/advantages/advantages
+			.container.p-top
+				h2.h2.text-center top games
+				include pug/request/request
+			
+			.container.p-top
+				h2.h2.text-center Ответы на популярные вопросы
+				.line 
+				p.subtitle Квартира остается вашей — вы можете делать с ней, что угодно
+				include pug/faq/faq
+				include pug/contacts/contacts
+			.section-bg.p-t-b
+				.container
+					include pug/footer/footer
+			.container.text-center.p-t-b
+				p Информация на сайте не является публичной офертой. Сервис «ПТС ЗАЙМ» оказывает содействие в подборе финансовых услуг компаний-партнеров и не является финансовым учреждением, банком, микрофинансовой организацией, лизинговой компанией, или ломбардом. Работа сайта autolombard-pts-zaim.ru не связана с осуществлением инвестиционной деятельности. Дополнительные и скрытые комиссии не взимаются. Все права защищены.
+
+			include pug/popup/popup
+		script(src="js/app.min.js") 
