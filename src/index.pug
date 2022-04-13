@@ -11,16 +11,38 @@ html
 			include pug/navbar/navbar
 			include pug/banner/banner
 			include pug/advantages/advantages
-			.container.p-top
-				h2.h2.text-center top games
-				include pug/request/request
-			
-			.container.p-top
-				h2.h2.text-center Ответы на популярные вопросы
-				.line 
-				p.subtitle Квартира остается вашей — вы можете делать с ней, что угодно
-				include pug/faq/faq
-				include pug/contacts/contacts
+			.section-bg.p-t-b
+				.container.container--bg
+					.p-t-b
+						.title-box
+							h2.h2.title-box__title Заявка на получение займа
+							.title-box__line
+							p.title-box__subtitle 100% одобрение через 20 минут, деньги в течение дня. Вы остаетесь владельцем собственности и пользуетесь ею
+						.p-top
+							include pug/request/request
+			.p-top
+				.container
+					.title-box
+						h2.h2.title-box__title Ответы на популярные вопросы
+						.title-box__line
+						p.title-box__subtitle Квартира остается вашей — вы можете делать с ней, что угодно
+
+					.p-top
+						include pug/faq/faq
+					.p-t-b
+						.title-box.text-center
+							h3.h3.title-box__title Контакты
+							.title-box__line
+							.contacts
+								.contacts__item
+									p.contacts__name Адрес:
+									a.contacts__descr(href="/" aria-label="contact link") Ленинградский проспект, 31Ас1
+								.contacts__item
+									p.contacts__name Электронная почта:
+									a.contacts__descr(href="mailto:info@autolombard-autozalog.ru" aria-label="contact link") info@autolombard-autozalog.ru
+								.contacts__item
+									p.contacts__name Часы работы:
+									p Ежедневно с 8:00 до 20:00. Прием заявок 24/7
 			.section-bg.p-t-b
 				.container
 					include pug/footer/footer

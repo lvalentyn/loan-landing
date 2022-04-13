@@ -25,6 +25,10 @@ body {
 	max-width: $container-width;
 	padding: 0 $container-padding;
 	margin: 0 auto;
+
+	&--bg {
+		background-color: #fff;
+	}
 }
 
 .rating {
@@ -139,21 +143,65 @@ form {
 .h2,
 .h3 {
 	margin: 0 0 20px;
-	font-weight: 700;
-	text-transform: uppercase;
-}
-
-.h2 {
-	font-size: 24px;
-}
-
-.h3 {
-	font-size: 22px;
+	font-size: 20px;
 	line-height: 28px;
+	font-weight: 600;
+	text-transform: capitalize;
 }
+
 
 .text-center {
 	text-align: center;
+}
+
+.title-box {
+
+	&__line {
+		display: inline-block;
+		margin-bottom: 20px;
+		width: 40px;
+		height: 2px;
+		background-color: $secondary-color;
+	}
+
+	&__subtitle {
+		font-weight: 600;
+	}
+}
+
+.contacts {
+	&__item {
+		&:not(:last-child) {
+			margin-bottom: 15px;
+		}
+	}
+
+	&__name {
+		margin-bottom: 5px;
+		font-size: 16px;
+		line-height: 26px;
+		font-weight: 600;
+	}
+
+	&__descr {
+		position: relative;
+		color: $secondary-color;
+
+		&::after {
+			content: '';
+			position: absolute;
+			bottom: -2px;
+			left: 0;
+			width: 100%;
+			border-bottom: 2px dotted $secondary-color;
+		}
+
+		&:hover {
+			text-decoration: none;
+		}
+	}
+
+
 }
 
 .text-box {
@@ -184,6 +232,7 @@ form {
 		max-width: 640px;
 		margin-bottom: 20px;
 	}
+
 }
 
 .section-bg {
@@ -209,6 +258,19 @@ form {
 }
 
 @include respond-from(sm) {
+
+	.contacts {
+		display: flex;
+
+		&__item {
+			flex-basis: 100%;
+
+			&:not(:last-child) {
+				margin-right: 10px;
+			}
+		}
+	}
+
 	.text-box {
 		img {
 			max-width: 40%;
@@ -230,6 +292,8 @@ form {
 	.p-top {
 		padding-top: 60px;
 	}
+
+
 }
 
 @include respond-from(to-md) {
@@ -243,6 +307,47 @@ form {
 }
 
 @include respond-from(md) {
+	.h2 {
+		font-size: 30px;
+	}
+
+	.container {
+		&--bg {
+			max-width: calc($container-width - $container-padding * 2);
+		}
+	}
+
+	.title-box {
+		display: flex;
+		align-items: center;
+		text-align: left;
+
+		&__title {
+			margin: 0 5% 0px 0;
+		}
+
+		&__line {
+			margin: 0 4% 0 0;
+			width: 2px;
+			height: 60px;
+		}
+
+	}
+
+	.contacts {
+		flex-grow: 1;
+		align-items: center;
+		justify-content: space-between;
+
+		&__item {
+			flex-basis: auto;
+
+			&:not(:last-child) {
+				margin-bottom: 0;
+			}
+		}
+	}
+
 	.none-md {
 		display: none !important;
 	}
@@ -267,11 +372,42 @@ form {
 }
 
 @include respond-from(lg) {
+	.container {
+		&--bg {
+			padding: 0 60px;
+
+			.title-box {
+				&__subtitle {
+					max-width: 55%;
+				}
+			}
+
+		}
+	}
+
 	.p-t-b {
 		padding: 40px 0;
 	}
 
 	.p-top {
 		padding-top: 90px;
+	}
+
+	.h2 {
+		font-size: 40px;
+		line-height: 50px;
+	}
+
+	.h3 {
+		font-size: 24px;
+		line-height: 32px;
+	}
+
+	.title-box {
+		&__subtitle {
+			max-width: 35%;
+			font-size: 24px;
+			line-height: 32px;
+		}
 	}
 }
