@@ -520,22 +520,27 @@ button {
   padding: 0;
 }
 
-input,
-form {
-  border: none;
+form input {
+  width: 100%;
+  padding: 14px 20px;
+  margin-bottom: 20px;
+  border: 1px solid #E6E6E6;
+  border-radius: 5px;
+  font-size: 16px;
 }
 
 .btn {
   display: inline-block;
   text-align: center;
   width: 100%;
-  padding: 15px 0px;
+  padding: 20px 0px;
   font-size: 16px;
   font-weight: 900;
-  color: inherit;
+  color: #fff;
   text-decoration: none;
-  text-transform: uppercase;
-  background: rgb(255, 119, 9);
+  text-transform: capitalize;
+  background: #00B4E3;
+  border-radius: 5px;
   cursor: pointer;
   transition: 0.3s ease;
 }
@@ -738,6 +743,9 @@ form {
   }
   .container--bg .title-box__subtitle {
     max-width: 55%;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30px;
   }
 
   .p-t-b {
@@ -1545,5 +1553,43 @@ form {
   100% {
     width: 60%;
     top: 50%;
+  }
+}
+.request__btn-box {
+  max-width: 305px;
+}
+.request__btn {
+  margin-bottom: 15px;
+}
+.request__subtitle {
+  text-align: center;
+  font-size: 12px;
+  line-height: 20px;
+}
+@media only screen and (min-width: 768px) {
+  .request__inputs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .request__input {
+    width: calc(50% - 10px);
+  }
+  .request__input:not(:nth-child(even)) {
+    margin-right: 20px;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .request__form {
+    display: flex;
+    margin-bottom: -20px;
+  }
+  .request__inputs {
+    margin-right: 30px;
+  }
+}
+@media only screen and (min-width: 1439px) {
+  .request__inputs {
+    margin-right: 90px;
   }
 }

@@ -86,7 +86,18 @@
             </div>
             <div class="p-top">
               <section class="request">
-                <p>request</p>
+                <form class="request__form" action="/">
+                  <div class="request__inputs">
+                    <input class="request__input" type="text" name="name" placeholder="Ваше имя" required>
+                    <input class="request__input" type="text" name="phone" placeholder="+7 (___) ___-__-__" required>
+                    <input class="request__input" type="text" name="type" placeholder="Тип недвижимости" required>
+                    <input class="request__input" type="text" name="sum" placeholder="Сумма займа" required>
+                  </div>
+                  <div class="request__btn-box">
+                    <button class="request__btn btn" type="submit" name="submit">Получить одобрение</button>
+                    <p class="request__subtitle">Нажимая на кнопку, вы даете согласие на обработку ваших персональных данных</p>
+                  </div>
+                </form>
               </section>
             </div>
           </div>
@@ -192,6 +203,7 @@
           <div class="popup__title">Create Account</div>
           <form class="popup__form" action="/">
             <input class="popup__input" type="text" name="name" placeholder="Username" required>
+            <input class="popup__input" type="text" name="phone" placeholder="Phone" required>
             <input class="popup__input" type="email" name="email" placeholder="Email" required>
             <input class="popup__input" type="password" name="password" placeholder="Password" required>
             <div class="popup__btn-box">

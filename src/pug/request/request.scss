@@ -1,1 +1,51 @@
 @import '../../scss/vars';
+
+.request {
+
+	&__btn-box {
+		max-width: 305px;
+	}
+
+	&__btn {
+		margin-bottom: 15px;
+	}
+
+	&__subtitle {
+		text-align: center;
+		font-size: 12px;
+		line-height: 20px;
+	}
+
+	@include respond-from(sm) {
+		&__inputs {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+		}
+
+		&__input {
+			width: calc(50% - 10px);
+
+			&:not(:nth-child(even)) {
+				margin-right: 20px;
+			}
+		}
+	}
+
+	@include respond-from(md) {
+		&__form {
+			display: flex;
+			margin-bottom: -20px;
+		}
+
+		&__inputs {
+			margin-right: 30px;
+		}
+	}
+
+	@include respond-from(lg) {
+		&__inputs {
+			margin-right: 90px;
+		}
+	}
+}

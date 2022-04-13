@@ -1,2 +1,10 @@
 section.request
-	p request
+	form.request__form(action="/")
+		.request__inputs
+			input.request__input(type="text" name="name" placeholder="Ваше имя" required)
+			input.request__input(type="text" name="phone" placeholder="+7 (___) ___-__-__" required)
+			input.request__input(type="text" name="type" placeholder="Тип недвижимости" required)
+			input.request__input(type="text" name="sum" placeholder="Сумма займа" required)
+		.request__btn-box
+			button.request__btn.btn(type="submit" name="submit") Получить одобрение
+			p.request__subtitle Нажимая на кнопку, вы даете согласие на обработку ваших персональных данных
