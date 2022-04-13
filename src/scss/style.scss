@@ -265,6 +265,26 @@ form {
 	font-size: 12px;
 }
 
+// slick
+
+.slick-slide {
+	height: auto !important;
+}
+
+.slick-dots {
+	position: absolute;
+	display: flex;
+
+	button {
+		width: 10px;
+		height: 10px;
+		margin: 0 10px;
+
+		border-radius: 50%;
+		cursor: pointer;
+	}
+}
+
 @include respond-from(sm) {
 
 	.contacts {

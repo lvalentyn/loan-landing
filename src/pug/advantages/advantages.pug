@@ -1,26 +1,50 @@
-mixin card(props={})
-	.advantages__card#about
-		.advantages__icon 
-			//- img(src=`@img/${props.icon}.png`, alt=`${props.title}`)
-		.advantages__text
+mixin slide(props={})
+	.advantages__slide
+		.advantages__title-box
+			.advantages__logo
+				img(src=`@img/svg/${props.logo}.svg` alt="advantages-icon")
 			.advantages__title #{props.title}
-			.advantages__descr #{props.descr}
+		ul.advantages__text-box
+			li.advantages__descr #{props.descr1}
+			if(props.descr2)
+				li.advantages__descr #{props.descr2}
 
 section.advantages
-	.container 
-		.advantages__box
-			+card({
-				icon: 'advanatges-i-fast',
-				title: 'Free Delivery',
-				descr: 'Free Shipping On All Order  lorem ipsum dolor sit amet, consectetuer adipiscing elit'
-			})
-			+card({
-				icon: 'advanatges-i-money',
-				title: 'Free Delivery',
-				descr: 'Back Guarantee in 7 days dolor sit amet, consectetuer adipiscing elit'
-			})
-			+card({
-				icon: 'advanatges-i-discount',
-				title: 'Member Discount',
-				descr: 'On every order over $130.00  consectetuer '
-			})
+	.advantages__slider.js-advantages-slider
+		+slide({
+			logo: 'advantage-i-monet',
+			title: 'Никаких требований к собственности',
+			descr1: 'Дадим займ даже если собственность в залоге или аресте',
+			descr2: 'Подходит недвижимость любой ликвидности и состояния',
+		})
+		+slide({
+			logo: 'advantage-i-like',
+			title: 'Без страховок и штрафов',
+			descr1: 'Досрочное погашение и продление займа без комиссий и переплат',
+			descr2: 'У нас можно не страховать кредит и нет штрафов за просрочки',
+		})
+		+slide({
+			logo: 'advantage-i-approved',
+			title: '100% одобрение займа',
+			descr1: 'Одобряем даже с плохой кредитной историей, без подтверждения дохода',
+			descr2: 'От 70 до 90% от рыночной стоимости недвижимости',
+		})
+		+slide({
+			logo: 'advantage-i-clock',
+			title: 'Минимум вашего времени',
+			descr1: 'Вам не нужно ходить по разным инстанциям, мы все сделаем за вас',
+			descr2: 'Нужно всего 2 документа для физических лиц и 3 для юр. лиц',
+		})
+		+slide({
+			logo: 'advantage-i-subtract',
+			title: 'Не рискуете потерять собственность',
+			descr1: 'Строго по закону ФЗ 102 «О залоге», договор заключаем в присутствии государственного нотариуса',
+			descr2: 'Вы остаетесь собственником, документы остаются у вас',
+		})
+		+slide({
+			logo: 'advantage-i-key',
+			title: 'Ваша собственность в вашем распоряжении',
+			descr1: 'Можете сдавать вашу собственность, прописывать туда жильцов и тд.',
+			descr2: 'Никогда не посещаем объект залога, даже при просрочках',
+		})
+		

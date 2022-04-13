@@ -10,7 +10,14 @@ html
 		.page
 			include pug/navbar/navbar
 			include pug/banner/banner
-			include pug/advantages/advantages
+			.container
+				.p-t-b
+					.title-box.title-box--alt
+						h2.h2.title-box__title Преимущества займа под недвижимость
+						.title-box__line
+						p.title-box__subtitle Получите деньги под залог недвижимости на самых выгодных условиях
+					.p-top
+						include pug/advantages/advantages
 			.section-bg.p-t-b
 				.container.container--bg
 					.p-t-b

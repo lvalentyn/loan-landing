@@ -20,23 +20,28 @@ window.addEventListener('DOMContentLoaded', () => {
 
 	// slick
 	// setTimeout(function () {
-	// team slider
-	if ($('.js-advantages-slider').length) {
-		$('.js-advantages-slider').slick({
-			lazyLoad: 'ondemand',
-			slidesToShow: 1,
-			slidesToScroll: 1,
-			arrows: false,
-			dots: true,
-			autoplay: true,
-			autoplaySpeed: 5000,
-			fade: false,
-			adaptiveHeight: true,
-			swipe: false,
-			mobileFirst: true
-		});
-		$('.slick-dots button').html('');
-	}
+	$(window).on('load resize orientationchange', function () {
+		const $carousel = $('.js-advantages-slider');
+		if (($(window).innerWidth() >= 568) && ($carousel.hasClass('slick-initialized'))) {
+			$carousel.slick('unslick');
+		} else if (($(window).innerWidth() < 568) && (!$carousel.hasClass('slick-initialized'))) {
+			$carousel.slick({
+				lazyLoad: 'ondemand',
+				slidesToShow: 1,
+				slidesToScroll: 1,
+				arrows: false,
+				dots: true,
+				autoplay: true,
+				autoplaySpeed: 5000,
+				fade: false,
+				adaptiveHeight: true,
+				swipe: false,
+				mobileFirst: true
+			});
+			$('.slick-dots button').html('');
+		}
+	});
+
 	// }, 2000);
 
 	// for create webP dublicate
