@@ -25,7 +25,7 @@ const burger = (menuSelector, burgerSelector) => {
 	});
 
 	window.addEventListener('resize', function () {
-		if (window.innerWidth > 1023) {
+		if (window.innerWidth > 768) {
 			menuElem.classList.remove('open')
 			document.body.classList.remove('no-scroll');
 		}

@@ -11,12 +11,23 @@ import $ from "jquery";
 window.addEventListener('DOMContentLoaded', () => {
 	'use strict';
 
+	// sticky menu
+	const sticky = () => {
+		const navbar = document.querySelector('.js-sticky')
+		if (window.pageYOffset >= 100) {
+			navbar.classList.add('sticky')
+		} else {
+			navbar.classList.remove('sticky')
+		}
+	}
+	window.addEventListener('scroll', sticky)
+
 	// my modules
 	smoothScrolling();
 	modals();
 	forms();
 	accordion('.js-faq-btn');
-	// burger('.js-burgermenu', '.js-burger-btn');
+	burger('.js-burger-menu', '.js-burger-btn');
 
 	// slick
 	// setTimeout(function () {

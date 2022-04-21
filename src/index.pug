@@ -9,7 +9,11 @@ html
 	body
 		.page
 			include pug/navbar/navbar
-			include pug/banner/banner
+			.section
+				.section__bg
+					img(src='@img/banner-bg.jpg' alt='banner-bg')
+				.container
+					include pug/banner/banner
 			.container
 				.p-t-b
 					.title-box.title-box--alt

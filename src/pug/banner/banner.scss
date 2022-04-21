@@ -1,55 +1,38 @@
 @import '../../scss/vars';
 
 .banner {
-	&__slider {
-		position: relative;
+	margin-top: 64px;
 
-		.slick-slide {
-			height: auto !important;
-		}
+	&__box {
+		padding: 30px 15px 60px;
+		background: $light-blue-color;
+	}
 
-		.slick-dots {
-			position: absolute;
-			bottom: 15px;
-			left: 50%;
-			display: flex;
-			transform: translateX(-50%);
+	&__title {
+		margin: 0 0 15px;
+		text-transform: unset;
+		font-size: 24px;
+		line-height: 29px;
 
-			button {
-				width: 12.5px;
-				height: 12.5px;
-				margin: 0 3px;
-				// background-color: $main-color;
-				border-radius: 50%;
-				opacity: .2;
-				cursor: pointer;
-			}
-
-			.slick-active {
-				button {
-					// background-color: $hover-color;
-					opacity: 1;
-				}
-			}
+		span {
+			color: $secondary-color;
 		}
 	}
 
-	&__slide {
-		position: relative;
-		padding: 40px 0px 80px;
+	&__subtitle {
+		margin-bottom: 30px;
 	}
 
-	&__text-box {
-		text-align: center;
+	&__item {
+		display: flex;
+		align-items: center;
+
+		margin-bottom: 15px;
 	}
 
-	&__bg {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		z-index: -1;
+	&__icon {
+		flex: 0 0 auto;
+		margin-right: 15px;
 
 		img {
 			width: 100%;
@@ -58,96 +41,144 @@
 		}
 	}
 
-	&__title {
-		margin-bottom: 15px;
-		font-size: 36px;
-		font-weight: 700;
-		text-transform: uppercase;
-		letter-spacing: .07em;
-	}
-
-	&__subtitle {
-		margin-bottom: 15px;
-		font-size: 20px;
-		text-transform: uppercase;
-		letter-spacing: .02em;
-	}
-
 	&__descr {
-		margin-bottom: 40px;
-		font-size: 14px;
 		line-height: 22px;
 	}
 
-	&__btn-box {
-		display: inline-block;
-		width: 190px;
+	&__btn {
+		max-width: 305px;
+
+		&:hover {
+			text-decoration: none;
+		}
 	}
 
 	@include respond-from(xxs) {
-		&__slider {
-
-			.slick-dots {
-				left: 15px;
-				transform: translateX(0);
-			}
+		&__container {
+			display: flex;
+			flex-wrap: wrap;
+			margin-right: -15px;
 		}
 
-		&__text-box {
-			width: 50%;
-			text-align: left;
+		&__item,
+		&__btn {
+			width: calc(50% - 15px);
+			margin-right: 15px;
+		}
+
+		&__btn {
+			align-self: flex-start;
 		}
 	}
 
-	@include respond-from(md) {
-		&__slider {
+	@include respond-from(to-sm) {
+		&__box {
+			width: calc(100% + 30px);
+			margin-left: -15px;
+		}
 
-			.slick-dots {
-				bottom: 50px;
+		&__decor {
+			display: none;
+		}
+
+		&__btn {
+			max-width: 305px;
+		}
+	}
+
+	@include respond-from(sm) {
+		margin-top: 75px;
+
+		&__box {
+			position: relative;
+			padding: 30px 45px 60px 15px;
+			width: 70%;
+		}
+
+		&__decor {
+			position: absolute;
+			right: -210px;
+			top: 40px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			padding: 10px 10px 10px 15px;
+			max-width: 230px;
+
+			border-radius: 0 8px 8px 0;
+			background-color: $secondary-color;
+
+			span {
+				font-weight: 700;
+				font-size: 15px;
+				line-height: 19px;
+				color: #fff;
+			}
+
+			&:before {
+				content: '';
+				position: absolute;
+				bottom: -20px;
+				left: 0;
+
+				border-style: solid;
+				border-color: transparent;
+				border-width: 0 20px 20px 0;
+				border-right-color: #068fb1;
 			}
 		}
 
-		&__slide {
-			padding: 80px 0px 150px;
+		&__title {
+			width: 80%;
+		}
+
+	}
+
+	@include respond-from(md) {
+		&__box {
+			position: relative;
+			padding: 30px 45px 50px 45px;
+			width: 60%;
 		}
 
 		&__title {
-			font-size: 60px;
-			margin-bottom: 40px;
+			font-size: 30px;
+			line-height: 40px;
 		}
 
 		&__subtitle {
-			font-size: 35px;
-			margin-bottom: 20px;
+			font-size: 20px;
 		}
 
 		&__descr {
-			font-size: 18px;
+			font-size: 16px;
 			line-height: 26px;
 		}
 	}
 
 	@include respond-from(lg) {
+		&__box {
+			padding: 50px 45px;
+			width: 65%;
+		}
 
 		&__title {
-			font-size: 90px;
-			margin-bottom: 90px;
+			font-size: 48px;
+			line-height: 60px;
+			margin-bottom: 30px;
 		}
 
 		&__subtitle {
-			font-size: 50px;
 			margin-bottom: 40px;
 		}
-	}
 
-	@include respond-from(full) {
+		&__item {
+			margin-bottom: 30px;
+		}
 
-		&__slider {
-
-			.slick-dots {
-				left: 50%;
-				transform: translateX(-770px);
-			}
+		&__row {
+			padding: 20px 0;
 		}
 	}
 }

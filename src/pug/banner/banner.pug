@@ -1,20 +1,35 @@
-mixin slide(props={})
-	.banner__slide
-		.banner__bg
-			//- picture
-			//- 	source(media="(min-width: 567px)" srcset="@img/banner-bg-desk.jpg")
-			//- 	img(src="@img/banner-bg-mob.jpg" alt="banner-bg-mob")
-		.container
-			.banner__text-box
-				p.banner__title horizon 
-				p.banner__subtitle forbidden west
-				p.banner__descr Horizon Forbidden West is an upcoming action role-playing game developed by Guerrilla Games and published by Sony Interactive Entertainment.
-				.banner__btn-box
-					a.banner__btn.btn.js-register-btn(href="/" aria-label="play-now btn")
-						span play now
+mixin item(props={})
+	.banner__item 
+		.banner__icon
+			img(src=`@img/svg/${props.logo}.svg` alt="banner-icon")
+		p.banner__descr #{props.descr}
 
 section.banner#home
-	.banner__slider.js-banner-slider
-		+slide
-		+slide
-		+slide
+	.banner__box
+		.banner__decor 
+			span Выдаем займы физ. лицам и юр. лицам
+		h1.h1.banner__title Займ под залог недвижимости в  
+			span под 8% годовых
+		p.banner__subtitle Для физических, юридических лиц и ИП
+		.banner__container
+			+item({
+				logo: 'banner-i-like',
+				descr: '100% одобрение с любой кредитной историей'
+			})
+			+item({
+				logo: 'banner-i-percent',
+				descr: 'Ставка 8% годовых, без справок с работы и страховки'
+			})
+			+item({
+				logo: 'banner-i-monet',
+				descr: 'От 50 000 ₽ до 60 млн. ₽ на срок от 1 месяца до 20 лет'
+			})
+			+item({
+				logo: 'banner-i-clock',
+				descr: 'Одобрение за 10 минут, выдаем деньги в день обращения'
+			})
+			+item({
+				logo: 'banner-i-key',
+				descr: 'Без переоформления: используйте собственность как угодно'
+			})
+			a(href="/" aria-label='banner btn').btn.banner__btn Отправить заявку 
